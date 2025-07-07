@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="High-dimensional 3D Language Gaussian Splatting
+        with 450+ FPS">
+  <meta name="keywords" content="LangSplat, 3D Gaussian Splatting, LERF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>High-dimensional 3D Language Gaussian Splatting with 450+ FPS</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.svg">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">High-dimensional 3D Language Gaussian Splatting with 450+ FPS</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://li-wanhua.github.io/">Wanhua Li</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/ZhaoYujie2002">Yujie Zhao</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://minghanqin.github.io/">Minghan Qin</a><sup>3*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/jimmyYliu">Yang Liu</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://caiyuanhao1998.github.io/">Yuanhao Cai</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan</a><sup>5,6</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://vcg.seas.harvard.edu/people/hanspeter-pfister">Hanspeter Pfister</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              (* indicates equal contribution)
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Harvard University,</span>
+            <span class="author-block"><sup>2</sup>University of Chinese Academy of Sciences</span>
+            <span class="author-block"><sup>3</sup>Tsinghua University</span>
+            <span class="author-block"><sup>4</sup>Johns Hopkins University</span>
+            <span class="author-block"><sup>5</sup>MIT-IBM Watson AI Lab</span>
+            <span class="author-block"><sup>6</sup>UMass Amherst</span>
+          </div>
+          
+          <!--
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><font color="red"><b>Accepted to CVPR 2025</b></font></span>
+          </div>
+          -->
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Coming Soon)</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (Coming Soon)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=KBz8lVPt7z4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ZhaoYujie2002/LangSplat-V2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!--
+                <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/1qcBxcjtgsKq7a5rJUkLxB85usBKB8B4g"
+                  class="external-link button is-normal is-rounded is-dark">
+                 <span class="icon">
+                     <i class="fas fa-database"></i>
+                 </span>
+                 <span>Model</span>
+                 </a>
+              </span>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <!-- <p>
+            <b>TL;DR:</b> We ground CLIP features into a set of 3D language Gaussians, which attains precise 3D language fields while being <font color="red"><b>199 &times;</b></font> faster than LERF.
+          </p> -->
+          <p>
+            <b>TL;DR:</b> We present LangSplatV2, which achieves high-dimensional feature splatting at 476.2 FPS and 3D open-vocabulary text querying at 384.6 FPS for high-resolution images.
+          </p>
+        </div>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/KBz8lVPt7z4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <!-- TODO:Video -->
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we introduce LangSplatV2, which achieves high-dimensional feature splatting at 476.2 FPS and 3D open-vocabulary text querying at 384.6 FPS for high-resolution images, providing a 42 &times; speedup and a 47 &times; boost over LangSplat respectively, along with improved query accuracy.
+            LangSplat employs Gaussian Splatting to embed 2D CLIP language features into 3D, significantly enhancing speed and learning a precise 3D language field with SAM semantics. Such advancements in 3D language fields are crucial for applications that require language interaction within complex scenes. However, LangSplat does not yet achieve real-time performance (8.2 FPS), even with advanced A100 GPUs, severely limiting its broader application. 
+            In this paper, we first conduct a detailed time analysis of LangSplat, identifying the heavyweight decoder as the primary speed bottleneck. 
+            Our solution, LangSplatV2 assumes that each Gaussian acts as a sparse code within a global dictionary, leading to the learning of a 3D sparse coefficient field that entirely eliminates the need for a heavyweight decoder. By leveraging this sparsity, we further propose an efficient sparse coefficient splatting method with CUDA optimization, rendering high-dimensional feature maps at high quality while incurring only the time cost of splatting an ultra-low-dimensional feature. 
+            Our experimental results demonstrate that LangSplatV2 not only achieves better or competitive query accuracy but is also significantly faster.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Speed of High-dimensional Feature Rendering</h3>
+        <div class="hero-body" style="text-align: center;">
+          <img src="./static/images/dim_all.png" style="width: 70%; height: auto;"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            This figure shows feature rendering time comparison with different GPUs. Note that the less advanced GPUs (RTX 3090 and RTX 4090) 
+            cannot accommodate the LangSplat model with feature dimensions of 1024 or higher due to running out of memory.
+            As we can see, our LangSplatV2 successfully decouples rendering speed from the dimensionality 
+            of rendering features, enabling the rendering of high-dimensional features at the computational cost of splatting 
+            an ultra-low-dimensional feature.
+          </p>
+        </div>
+        <div class="hero-body" style="text-align: center;">
+          <img src="./static/images/speed.png" style="width: 70%; height: auto;"//>
+        </div>
+        <div class="hero-body" style="text-align: center;">
+          <img src="./static/images/speed_ablation.png" style="width: 70%; height: auto;"//>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            These figures show our contributions to inference speeding up.
+            Rendering three semantic levels in parallel can reduce the rendering time from 6.0 ms to 2.0 ms per query. The sparse coefficient field can significantly speed up the decoding stage from 83.1 ms/q to 0.1 ms/q by 
+            changing the heavy weight decoder to a simple matrix multiplication operation. Efficient sparse coefficient 
+            splatting method effectively transformed the 192-dimensional rendering into 12-dimensional rendering, 
+            reducing the rendering time from 5.3 ms to 2.0 ms per query through CUDA optimization.
+          </p>
+        </div>
+        <h3 class="title is-4">Visualization of Open-vocabulary 3D Query</h3>
+        <div class="hero-body">
+          <img src="./static/images/loc_paper.png"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Visualization of the open-vocabulary 3D object localization results. We observe that our LangSpaltV2 can give more accurate localization predictions compared with LangSplat. For example, our LangSplatV2 can give the correct prediction for "pumpkin" while LangSplat entirely fails in this query.
+          </p>
+        <div class="hero-body">
+          <img src="./static/images/seg_paper.png"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Visualization of the open-vocabulary 3D segmentation results in three datasets. We observe that our LangSplatV2 can generate more accurate masks compared with LangSplat. For example, in the "Kitchen" scene, LangSplat predicts a noisy mask for the "ketchup" query, while our LangSplatV2 generates more precise and clean masks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    TODO:BibTeX
+    <!-- <pre><code>@article{qin2023langsplat,
+  title={LangSplat: 3D Language Gaussian Splatting},
+  author={Qin, Minghan and Li, Wanhua and Zhou, Jiawei and Wang, Haoqian and Pfister, Hanspeter},
+  journal={arXiv preprint arXiv:2312.16084},
+  year={2023}
+}</code></pre> -->
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <!-- <p>
+            The souce code is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>,
+              we thank the authors for sharing the templates.
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
